@@ -1,8 +1,9 @@
-.beaw{
-width="fill"
-height="fill"
+img {
+  width="fill"
+  height="fill"
+  object-fit: cover;
 }
 
 body {
-background-color: #000000;
+  background-color: #000000;
 }
