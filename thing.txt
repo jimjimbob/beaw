@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timekeeper</title>
+<style>
+    #time {
+        position: fixed;
+        top: 0;
+        left: 0;
+        font-size: 2em;
+        color: black;
+        padding: 10px;
+        z-index: 9999;
+    }
+</style>
+</head>
+<body>
+    <div id="time"></div>
+
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = new Date().toLocaleTimeString('en-US', {hour12: false});
+        }
+
+        updateTime(); // Display initial time
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
+--------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Overlay</title>
+<style>
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 3em;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <div id="overlay" class="overlay"></div>
+    <p>This is the existing content of your mystical realm.</p>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'k') {
+                const overlay = document.getElementById('overlay');
+                overlay.style.display = overlay.style.display === 'none' ? 'flex' : 'none';
+                overlay.textContent = new Date().toLocaleTimeString('en-US', {hour12: false});
+            }
+        });
+    </script>
+</body>
+</html>
