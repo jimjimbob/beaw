@@ -11,8 +11,18 @@
     
   </head>
   <body>
-    <div id="time">TEST</div>
+    <div id="time"></div>
     <img src="img/test.jpg" alt="beaw" width="100%" height="100%">
-   <script source="time.js"></script>
+    <script>
+      function updateTime() {
+          const timeElement = document.getElementById('time');
+          timeElement.textContent = new Date().toLocaleTimeString('en-US', {hour12: false});
+      }
+
+      updateTime(); // Display initial time
+
+      // Update time every second
+      setInterval(updateTime, 1000);
+  </script>
   </body>
 </html>
