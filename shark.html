@@ -11,6 +11,18 @@
     
   </head>
   <body>
+    <div id="time"></div>
+    <script>
+      function updateTime() {
+          const timeElement = document.getElementById('time');
+          timeElement.textContent = new Date().toLocaleTimeString('en-US', {hour12: false});
+      }
+
+      updateTime(); 
+
+    
+      setInterval(updateTime, 1000);
+  </script>
  <img src="img/shark.jpg" alt="beaw" width="100%" height="100%">
   </body>
 </html>
